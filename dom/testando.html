@@ -1,80 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testando</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-
+    <title>Document</title>
     <style>
-        .brilho {
-            border: 1px solid gold;
-            background-color: indigo;
-            color: gold;
-            margin: 5px;
-            padding: 2px;
+        th, td{
+            border: solid 1px black;
+            margin: 10px;
+            padding: 10px;
+
+        }
+        .efeito{
+            background-color: black;
+            color: blanchedalmond;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 0;
+        }
+        .efeitoTd:hover{
+            font-size: 32px;
+         border: 0;
+            margin: 40px;
+           color: whitesmoke;
+           background-color: black;
         }
     </style>
 </head>
-
-<body class='conteudo exercicio'>
-
-    <script>
-        const body = document.querySelector('body')
-        const tabela = document.createElement('table')
-        const thead = document.createElement('thead')
-        const tr = document.createElement('tr')
-        const th_nome = document.createElement('th')
-        const th_idade = document.createElement('th')
-        const th_sexo = document.createElement('th')
-        const th_emprego = document.createElement('th')
-        const tbody = document.createElement('tbody')
-        const trb = document.createElement('tr')
-
-
-
-        th_nome.classList.add('brilho')
-        th_idade.classList.add('brilho')
-        th_sexo.classList.add('brilho')
-        th_emprego.classList.add('brilho')
-        trb.classList.add('brilho')
-
-        th_nome.innerText = 'nome'
-        th_idade.innerText = 'idade'
-        th_sexo.innerText = 'sexo'
-        th_emprego.innerText = 'emprego'
-
-        const nome = 'filipe'
-        const idade = 27
-        const sexo = 'masculino'
-        const emprego = 'programdor'
-
-        trb.insertAdjacentHTML('afterbegin', `<td> ${emprego}</td>`)
-        trb.insertAdjacentHTML('afterbegin', `<td>${sexo}</td>`)
-        trb.insertAdjacentHTML('afterbegin', `<td>${idade} </td>`)
-        trb.insertAdjacentHTML('afterbegin', `<td>${nome}</td>`)
-     
-
-
-
-        tr.appendChild(th_nome)
-        tr.appendChild(th_idade)
-        tr.appendChild(th_sexo)
-        tr.appendChild(th_emprego)
-        thead.appendChild(tr)
-        tabela.appendChild(thead)
-        body.appendChild(tabela)
-        tabela.appendChild(tbody)
-        tbody.appendChild(trb)
-
-
-
-
-
-
-
-    </script>
+<body>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Nome</th>
+            <th>idade</th>
+            <th>genero</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row"> filipe</td>
+            <td>27</td>
+            <td>masculino</td>
+        </tr>
+        <tr>
+            <td scope="row">pedro</td>
+            <td>25</td>
+            <td>masculino</td>
+        </tr>
+        <tr>
+            <td scope="row">maria</td>
+            <td>52</td>
+            <td>feminino</td>
+        </tr>
+    </tbody>
+</table>
+    
 </body>
+<script>
+ const th = document.getElementsByTagName('th')
+ Array.from(th).forEach( 
+     e => e.classList.add('efeito')
+ )
+ const td = document.getElementsByTagName('td')
+ Array.from(td).forEach(
+     e => e.classList.add('efeitoTd')
+ )
 
+</script>
 </html>
